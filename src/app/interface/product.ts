@@ -2,6 +2,7 @@ export interface Product {
   id: number;
   name: string;
   image: string;
-  price: string;
+  price: number;
   quantity: number;
+  addToCart: boolean;
 }
