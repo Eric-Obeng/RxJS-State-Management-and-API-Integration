@@ -1,0 +1,7 @@
+<div class="cart">
+  <div class="cart__item" *ngFor="let product of cartItems">
+    <img [src]="product.image" alt="" />
+    <div class="cart__item"></div>
+    <button (click)="removeFromCart(product.id)">Remove From Cart</button>
+  </div>
+</div>
