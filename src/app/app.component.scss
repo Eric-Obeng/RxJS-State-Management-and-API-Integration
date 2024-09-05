@@ -1,0 +1,15 @@
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 1024px) {
+  main {
+    flex-direction: row;
+    gap: 2rem;
+
+    .cart {
+      width: 50rem;
+    }
+  }
+}
