@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./styles/variables";
+
+*,
+*::before,
+*::after {
+  margin: unset;
+  padding: unset;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $background-color;
+  color: $white-text;
+}
