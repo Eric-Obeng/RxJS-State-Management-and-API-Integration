@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { ProductService } from '../../services/product-service.service';
 import { Product } from '../../interface/product';
-import { Observable } from 'rxjs';
+import { delay, finalize, Observable, tap } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { of } from 'rxjs';
 import { CartService } from '../../services/cart-service.service';
@@ -15,14 +15,32 @@ import { CartService } from '../../services/cart-service.service';
 })
 export class ProductsComponent {
   products$!: Observable<Product[]>;
+  isLoading: boolean = true;
 
   constructor(
     private productService: ProductService,
-    private cartService: CartService
+    private cartService: CartService,
+    private cd: ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {
-    this.products$ = this.productService.fetchProducts();
+    this.products$ = this.productService.fetchProducts().pipe(
+      delay(2000),
+      tap(() => {
+        console.log('Setting isLoading to false');
+      }),
+      finalize(() => {
+        console.log('Setting isLoading to false in finalize');
+        this.isLoading = false;
+        this.cd.detectChanges();
+      })
+    );
+
+    this.products$.subscribe({
+      next: (products) => console.log('Products received:', products),
+      error: (error) => console.error('Error:', error),
+      complete: () => console.log('Product fetch completed'),
+    });
 
     // this.productService.fetchProducts().subscribe({
     //   next: (products) => {

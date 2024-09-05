@@ -1,12 +1,28 @@
 <div class="product-div">
-  <div class="products" *ngFor="let product of products$ | async">
-    <div class="image-div">
-      <img [src]="product.image" alt="" />
+  <h1>Products</h1>
+  <div *ngIf="isLoading; else productList" class="loader">
+    <!-- Skeleton Loading -->
+    <div class="skeleton-loader" *ngFor="let item of [1, 2, 3, 4]">
+      <div class="image-div"></div>
+      <div class="details">
+        <div class="name"></div>
+        <div class="price"></div>
+      </div>
     </div>
-    <div>
-      <p>{{ product.name }}</p>
-      <p>{{ product.price }}</p>
-    </div>
-    <button (click)="addToCart(product)">Add to Cart</button>
   </div>
+
+  <ng-template #productList>
+    <div class="product-container">
+      <div class="products" *ngFor="let product of products$ | async">
+        <div class="image-div">
+          <img [src]="product.image" alt="" />
+          <button class="btn" (click)="addToCart(product)">Add to Cart</button>
+        </div>
+        <div class="details">
+          <p class="name">{{ product.name }}</p>
+          <p class="price">{{ product.price | currency }}</p>
+        </div>
+      </div>
+    </div>
+  </ng-template>
 </div>
