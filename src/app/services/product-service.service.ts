@@ -11,11 +11,6 @@ export class ProductService {
   constructor(private http: HttpClient) {}
 
   fetchProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>(this.apIUrl).pipe(
-      catchError((err) => {
-        console.error('API fetch failed', err);
-        return of([]);
-      })
-    );
+    return this.http.get<Product[]>(this.apIUrl);
   }
 }
