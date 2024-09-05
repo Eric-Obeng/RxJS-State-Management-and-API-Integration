@@ -1,7 +1,17 @@
 <div class="cart">
+  <p class="number">Your cart ({{ totalItems }})</p>
   <div class="cart__item" *ngFor="let product of cartItems">
     <img [src]="product.image" alt="" />
-    <div class="cart__item"></div>
-    <button (click)="removeFromCart(product.id)">Remove From Cart</button>
+
+    <div class="item-details">
+      <p>{{ product.name }}</p>
+      <div class="price">
+        <p>{{ product.quantity }}x</p>
+        <p>{{ product.price | currency }}</p>
+      </div>
+      <p>Total: {{ product.quantity * product.price | currency }}</p>
+    </div>
+
+    <button class="btn" (click)="removeFromCart(product.id)">Remove Item</button>
   </div>
 </div>

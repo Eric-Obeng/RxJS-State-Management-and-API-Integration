@@ -21,7 +21,7 @@ export class CartComponent {
     this.cartService.getCartItems().subscribe({
       next: (items) => {
         this.cartItems = items;
-        this.totalItems = items.length;
+        this.totalItems = this.cartService.calculateTotalItems(items);
       },
       error: (error) => console.error('Error fetching cart items:', error),
     });

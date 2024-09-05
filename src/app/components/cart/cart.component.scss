@@ -1,0 +1,58 @@
+@import "../../../styles/variables";
+
+.cart {
+  width: 100%;
+  padding: 2rem;
+  background-color: $white-text;
+  color: $background-acent;
+  border-radius: 2rem 2rem 0 0;
+
+  p {
+    font-size: 1.2rem;
+
+    &.number {
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin-bottom: 0.8rem;
+    }
+  }
+
+  .cart__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+
+    img {
+      width: 4rem;
+      height: 4rem;
+    }
+
+    .item-details {
+      display: flex;
+      flex-direction: column;
+
+      .price {
+        display: flex;
+        gap: 0.5rem;
+      }
+    }
+
+    .btn {
+      background-color: $background-acent;
+      color: $white-text;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 1rem;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .cart {
+    width: 100%;
+    margin: auto;
+  }
+}
