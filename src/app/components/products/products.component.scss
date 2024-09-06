@@ -16,7 +16,7 @@
     .skeleton-loader {
       display: flex;
       margin-bottom: 20px;
-      width: 100%;
+      // width: 100%;
 
       .image-div {
         width: 100%;
@@ -61,7 +61,7 @@
       flex-direction: column;
       justify-content: start;
       align-items: start;
-      gap: 0.6rem;
+      gap: 1.5rem;
       width: 100%;
 
       .image-div {
@@ -127,6 +127,18 @@
 @media (min-width: 1024px) {
   .product-div {
     width: 100%;
+
+    .loader {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 50rem;
+      border: 2px solid green;
+
+      .skeleton-loader {
+        width: 20rem;
+      }
+    }
 
     .product-container {
       display: flex;

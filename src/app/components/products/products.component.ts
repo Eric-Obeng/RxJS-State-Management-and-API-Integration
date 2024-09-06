@@ -25,10 +25,11 @@ export class ProductsComponent {
 
   ngOnInit(): void {
     this.products$ = this.productService.fetchProducts().pipe(
-      delay(2000),
       tap(() => {
         console.log('Setting isLoading to false');
       }),
+      delay(2000),
+
       finalize(() => {
         console.log('Setting isLoading to false in finalize');
         this.isLoading = false;
