@@ -7,26 +7,26 @@
   },
   {
     "id": 2,
-    "name": "Clothes",
-    "image": "https://images.unsplash.com/photo-1532453288672-3a27e9be9efd",
-    "price": "10.99"
+    "name": "Nike",
+    "image": "https://images.unsplash.com/photo-1549298916-b41d501d3772",
+    "price": "50.99"
   },
   {
     "id": 3,
-    "name": "Clothes",
-    "image": "https://images.unsplash.com/photo-1532453288672-3a27e9be9efd",
-    "price": "10.99"
+    "name": "Hand Bag",
+    "image": "https://images.unsplash.com/photo-1527385352018-3c26dd6c3916",
+    "price": "90.99"
   },
   {
     "id": 4,
-    "name": "Clothes",
-    "image": "https://images.unsplash.com/photo-1532453288672-3a27e9be9efd",
+    "name": "MacBook Pro",
+    "image": "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9",
     "price": "10.99"
   },
   {
     "id": 5,
-    "name": "Clothes",
-    "image": "https://images.unsplash.com/photo-1532453288672-3a27e9be9efd",
+    "name": "Sofa",
+    "image": "https://images.unsplash.com/photo-1567016432779-094069958ea5",
     "price": "10.99"
   }
 ]
