@@ -7,13 +7,30 @@
   color: $background-acent;
   border-radius: 2rem 2rem 0 0;
 
-  p {
-    font-size: 1.2rem;
+  .top {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
 
-    &.number {
-      font-size: 1.4rem;
-      font-weight: bold;
-      margin-bottom: 0.8rem;
+    .clear {
+      background-color: $background-acent;
+      color: $white-text;
+      padding: .6rem;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 1rem;
+      cursor: pointer;
+    }
+
+    p {
+      font-size: 1.2rem;
+
+      &.number {
+        font-size: 1.4rem;
+        font-weight: bold;
+        margin-bottom: 0.8rem;
+      }
     }
   }
 

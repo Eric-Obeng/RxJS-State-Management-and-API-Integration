@@ -1,5 +1,9 @@
-<div class="cart">
-  <p class="number">Your cart ({{ totalItems }})</p>
+<div class="cart" *ngIf="showCart">
+  <div class="top">
+    <p class="number">Your cart ({{ totalItems }})</p>
+
+    <button class="clear" (click)="clearCart()">Clear Cart</button>
+  </div>
   <div class="cart__item" *ngFor="let product of cartItems">
     <img [src]="product.image" alt="" />
 
@@ -12,6 +16,8 @@
       <p>Total: {{ product.quantity * product.price | currency }}</p>
     </div>
 
-    <button class="btn" (click)="removeFromCart(product.id)">Remove Item</button>
+    <button class="btn" (click)="removeFromCart(product.id)">
+      Remove Item
+    </button>
   </div>
 </div>
